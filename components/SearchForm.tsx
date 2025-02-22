@@ -1,26 +1,30 @@
 import Form from "next/form";
 import SearchFormReset from "@/components/SearchFormReset";
-import {Search} from "lucide-react";
+import { Search } from "lucide-react";
 
 const SearchForm = ({ query }: { query?: string }) => {
-    return (
-        <Form action="/" scroll={false} className="search-form">
-            <input
-                name="query"
-                defaultValue={query}
-                className="search-input"
-                placeholder="Search Blogs"
-            />
+  return (
+    <Form
+      action="/"
+      scroll={false}
+      className="search-form border-[4px] md:border-[5px]"
+    >
+      <input
+        name="query"
+        defaultValue={query}
+        className="search-input text-sm md:text-lg"
+        placeholder="Search Blogs"
+      />
 
-            <div className="flex gap-2">
-                {query && <SearchFormReset />}
+      <div className="flex gap-2">
+        {query && <SearchFormReset />}
 
-                <button type="submit" className="search-btn text-white">
-                    <Search className="size-5" />
-                </button>
-            </div>
-        </Form>
-    )
-}
+        <button type="submit" className="search-btn text-white">
+          <Search className="size-5" />
+        </button>
+      </div>
+    </Form>
+  );
+};
 
-export default SearchForm
+export default SearchForm;

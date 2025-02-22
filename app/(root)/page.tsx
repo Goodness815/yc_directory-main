@@ -1,3 +1,5 @@
+"use client";
+import { TypeAnimation } from "react-type-animation";
 import BlogContainer from "@/components/BlogContainer";
 import SearchForm from "@/components/SearchForm";
 
@@ -14,8 +16,16 @@ export default async function Home({
       <section className="pink_container">
         <p className="tag">PITCH, POST AND GROW</p>
         <h1 className="heading">
-          Pitch Your Blog, <br />
-          Grow your social community
+          <span>Pitch Your Blog</span>
+          <br />
+          <span>Grow your </span>{" "}
+          <TypeAnimation
+            sequence={["community", 2000, "followers", 2000, "business", 2000]}
+            wrapper="span"
+            cursor={true}
+            repeat={Infinity}
+            style={{ display: "inline-block" }}
+          />
         </h1>
 
         <p className="sub-heading !max-w-3xl">
